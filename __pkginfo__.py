@@ -42,7 +42,7 @@ __copyright__ = """
 __version__ = "2.0.0"
 modname = "pytest-regressions-stubs"
 pypi_name = "pytest-regressions-stubs"
-import_name = "pytest_regressions_stubs"
+import_name = "pytest_regressions"
 __license__ = "MIT License"
 short_desc = 'Type stubs for pytest-regressions'
 __author__ = author = 'Dominic Davis-Foster'

@@ -34,7 +34,7 @@ repos:
    rev: v0.0.4
    hooks:
     - id: ensure-dunder-all
-      files: ^pytest_regressions_stubs/.*\.py$
+      files: ^pytest_regressions-stubs/.*\.py$
 
  - repo: https://github.com/pre-commit/pygrep-hooks
    rev: v1.5.1

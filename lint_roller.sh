@@ -8,13 +8,13 @@ if [ -z "$(git status --porcelain --untracked-files=no)" ] || [ "$1" == "-f" ]; 
 
   echo "Running autopep8"
 
-  autopep8 --in-place --select "$errors" -a --recursive pytest_regressions_stubs/
+  autopep8 --in-place --select "$errors" -a --recursive pytest_regressions/
 
   autopep8 --in-place --select "$errors" -a --recursive tests/
 
   echo "Running flake8"
 
-    >&2 flake8 pytest_regressions_stubs/
+    >&2 flake8 pytest_regressions/
 
     >&2 flake8 tests/
 

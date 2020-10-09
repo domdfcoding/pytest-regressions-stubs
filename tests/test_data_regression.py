@@ -1,111 +1,116 @@
 from __future__ import unicode_literals
 
+# stdlib
 from textwrap import dedent
 
+# 3rd party
 from pytest_regressions.testing import check_regression_fixture_workflow
 
 
 def test_example(data_regression):
-    """Basic example"""
-    contents = {"contents": "Foo", "value": 11}
-    data_regression.check(contents)
+	"""Basic example"""
+	contents = {"contents": "Foo", "value": 11}
+	data_regression.check(contents)
 
 
 def test_basename(data_regression):
-    """Basic example using basename parameter"""
-    contents = {"contents": "Foo", "value": 11}
-    data_regression.check(contents, basename="case.normal")
+	"""Basic example using basename parameter"""
+	contents = {"contents": "Foo", "value": 11}
+	data_regression.check(contents, basename="case.normal")
 
 
 def test_custom_object(data_regression):
-    """Basic example where we register a custom conversion to dump objects"""
+	"""Basic example where we register a custom conversion to dump objects"""
 
-    class Scalar:
-        def __init__(self, value, unit):
-            self.value = value
-            self.unit = unit
+	class Scalar:
 
-    def dump_scalar(dumper, scalar):
-        return dumper.represent_dict(dict(value=scalar.value, unit=scalar.unit))
+		def __init__(self, value, unit):
+			self.value = value
+			self.unit = unit
 
-    from pytest_regressions import add_custom_yaml_representer
+	def dump_scalar(dumper, scalar):
+		return dumper.represent_dict(dict(value=scalar.value, unit=scalar.unit))
 
-    add_custom_yaml_representer(Scalar, dump_scalar)
+	# 3rd party
+	from pytest_regressions import add_custom_yaml_representer
 
-    contents = {"scalar": Scalar(10, "m")}
+	add_custom_yaml_representer(Scalar, dump_scalar)
 
-    data_regression.check(contents)
+	contents = {"scalar": Scalar(10, "m")}
+
+	data_regression.check(contents)
 
 
 def test_usage_workflow(testdir, monkeypatch):
-    """
+	"""
     :type testdir: _pytest.pytester.TmpTestdir
 
     :type monkeypatch: _pytest.monkeypatch.monkeypatch
     """
-    import sys
-    import yaml
+	# stdlib
+	import sys
 
-    monkeypatch.setattr(
-        sys, "testing_get_data", lambda: {"contents": "Foo", "value": 10}, raising=False
-    )
-    source = """
+	# 3rd party
+	import yaml
+
+	monkeypatch.setattr(sys, "testing_get_data", lambda: {"contents": "Foo", "value": 10}, raising=False)
+	source = """
         import sys
         def test_1(data_regression):
             contents = sys.testing_get_data()
             data_regression.check(contents)
     """
 
-    def get_yaml_contents():
-        yaml_filename = testdir.tmpdir / "test_file" / "test_1.yml"
-        assert yaml_filename.check(file=1)
-        with yaml_filename.open() as f:
-            return yaml.safe_load(f)
+	def get_yaml_contents():
+		yaml_filename = testdir.tmpdir / "test_file" / "test_1.yml"
+		assert yaml_filename.check(file=1)
+		with yaml_filename.open() as f:
+			return yaml.safe_load(f)
 
-    check_regression_fixture_workflow(
-        testdir,
-        source=source,
-        data_getter=get_yaml_contents,
-        data_modifier=lambda: monkeypatch.setattr(
-            sys,
-            "testing_get_data",
-            lambda: {"contents": "Bar", "value": 20},
-            raising=False,
-        ),
-        expected_data_1={"contents": "Foo", "value": 10},
-        expected_data_2={"contents": "Bar", "value": 20},
-    )
+	check_regression_fixture_workflow(
+			testdir,
+			source=source,
+			data_getter=get_yaml_contents,
+			data_modifier=lambda: monkeypatch.setattr(
+					sys,
+					"testing_get_data",
+					lambda: {"contents": "Bar", "value": 20},
+					raising=False,
+					),
+			expected_data_1={"contents": "Foo", "value": 10},
+			expected_data_2={"contents": "Bar", "value": 20},
+			)
 
 
 def test_data_regression_full_path(testdir, tmpdir):
-    """
+	"""
     Test data_regression with ``fullpath`` parameter.
 
     :type testdir: _pytest.pytester.TmpTestdir
     """
-    fullpath = tmpdir.join("full/path/to").ensure(dir=1).join("contents.yaml")
-    assert not fullpath.isfile()
+	fullpath = tmpdir.join("full/path/to").ensure(dir=1).join("contents.yaml")
+	assert not fullpath.isfile()
 
-    source = """
+	source = """
         def test(data_regression):
             contents = {'data': [1, 2]}
             data_regression.check(contents, fullpath=%s)
     """ % (
-        repr(str(fullpath))
-    )
-    testdir.makepyfile(test_foo=source)
-    # First run fails because there's no yml file yet
-    result = testdir.inline_run()
-    result.assertoutcome(failed=1)
+			repr(str(fullpath))
+			)
+	testdir.makepyfile(test_foo=source)
+	# First run fails because there's no yml file yet
+	result = testdir.inline_run()
+	result.assertoutcome(failed=1)
 
-    # ensure now that the file was generated and the test passes
-    assert fullpath.isfile()
-    result = testdir.inline_run()
-    result.assertoutcome(passed=1)
+	# ensure now that the file was generated and the test passes
+	assert fullpath.isfile()
+	result = testdir.inline_run()
+	result.assertoutcome(passed=1)
 
 
 def test_data_regression_no_aliases(testdir):
-    """
+	"""
     YAML standard supports aliases as can be seen here:
     http://pyyaml.org/wiki/PyYAMLDocumentation#Aliases.
 
@@ -117,7 +122,7 @@ def test_data_regression_no_aliases(testdir):
 
     :type testdir: _pytest.pytester.TmpTestdir
     """
-    source = """
+	source = """
         def test(data_regression):
             red = (255, 0, 0)
             green = (0, 255, 0)
@@ -133,14 +138,14 @@ def test_data_regression_no_aliases(testdir):
             }
             data_regression.Check(contents)
     """
-    testdir.makepyfile(test_file=source)
+	testdir.makepyfile(test_file=source)
 
-    result = testdir.inline_run()
-    result.assertoutcome(failed=1)
+	result = testdir.inline_run()
+	result.assertoutcome(failed=1)
 
-    yaml_file_contents = testdir.tmpdir.join("test_file", "test.yml").read()
-    assert yaml_file_contents == dedent(
-        """\
+	yaml_file_contents = testdir.tmpdir.join("test_file", "test.yml").read()
+	assert yaml_file_contents == dedent(
+			"""\
         color1:
         - 255
         - 0
@@ -166,15 +171,15 @@ def test_data_regression_no_aliases(testdir):
         - 0
         - 255
         """
-    )
-    result = testdir.inline_run()
-    result.assertoutcome(passed=1)
+			)
+	result = testdir.inline_run()
+	result.assertoutcome(passed=1)
 
 
 def test_not_create_file_on_error(testdir):
-    """Basic example where we serializing the object should throw an error and should not create the file"""
+	"""Basic example where we serializing the object should throw an error and should not create the file"""
 
-    source = """
+	source = """
         def test(data_regression):
             class Scalar:
                 def __init__(self, value, unit):
@@ -184,10 +189,10 @@ def test_not_create_file_on_error(testdir):
             contents = {"scalar": Scalar(10, "m")}
             data_regression.Check(contents)
     """
-    testdir.makepyfile(test_file=source)
+	testdir.makepyfile(test_file=source)
 
-    result = testdir.inline_run()
-    result.assertoutcome(failed=1)
+	result = testdir.inline_run()
+	result.assertoutcome(failed=1)
 
-    yaml_file = testdir.tmpdir.join("test_file", "test.yml")
-    assert not yaml_file.isfile()
+	yaml_file = testdir.tmpdir.join("test_file", "test.yml")
+	assert not yaml_file.isfile()
