@@ -1,16 +1,17 @@
+# stdlib
 import operator
 
 
 def check_regression_fixture_workflow(
-    testdir,
-    source,
-    data_getter,
-    data_modifier,
-    expected_data_1,
-    expected_data_2,
-    compare_fn=None,
-):
-    """
+		testdir,
+		source,
+		data_getter,
+		data_modifier,
+		expected_data_1,
+		expected_data_2,
+		compare_fn=None,
+		):
+	"""
     Helper method to test regression fixtures like `data_regression`. Offers a basic template/script
     able to validate main behaviors expected by regression fixtures.
 
@@ -57,31 +58,31 @@ def check_regression_fixture_workflow(
         both data are equal. By default uses operator.eq, but can customized (for example
         to compare numpy arrays).
     """
-    if compare_fn is None:
-        compare_fn = operator.eq
-    testdir.makepyfile(test_file=source)
+	if compare_fn is None:
+		compare_fn = operator.eq
+	testdir.makepyfile(test_file=source)
 
-    # First run fails because there's no expected file yet
-    result = testdir.inline_run()
-    result.assertoutcome(failed=1)
+	# First run fails because there's no expected file yet
+	result = testdir.inline_run()
+	result.assertoutcome(failed=1)
 
-    # ensure now that the file was generated and the test passes
-    xx = data_getter()
-    compare_fn(xx, expected_data_1)
-    result = testdir.inline_run()
-    result.assertoutcome(passed=1)
+	# ensure now that the file was generated and the test passes
+	xx = data_getter()
+	compare_fn(xx, expected_data_1)
+	result = testdir.inline_run()
+	result.assertoutcome(passed=1)
 
-    # changing the regression data makes the test fail (file remains unchanged)
-    data_modifier()
-    result = testdir.inline_run()
-    result.assertoutcome(failed=1)
-    compare_fn(data_getter(), expected_data_1)
+	# changing the regression data makes the test fail (file remains unchanged)
+	data_modifier()
+	result = testdir.inline_run()
+	result.assertoutcome(failed=1)
+	compare_fn(data_getter(), expected_data_1)
 
-    # force regeneration (test fails again)
-    result = testdir.inline_run("--force-regen")
-    result.assertoutcome(failed=1)
-    compare_fn(data_getter(), expected_data_2)
+	# force regeneration (test fails again)
+	result = testdir.inline_run("--force-regen")
+	result.assertoutcome(failed=1)
+	compare_fn(data_getter(), expected_data_2)
 
-    # test should pass again
-    result = testdir.inline_run()
-    result.assertoutcome(passed=1)
+	# test should pass again
+	result = testdir.inline_run()
+	result.assertoutcome(passed=1)

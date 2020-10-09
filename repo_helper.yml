@@ -1,0 +1,25 @@
+# Configuration for 'repo_helper' (https://github.com/domdfcoding/repo_helper)
+---
+modname: 'pytest-regressions-stubs'
+copyright_years: '2020'
+author: 'Dominic Davis-Foster'
+email: 'dominic@davis-foster.co.uk'
+username: 'domdfcoding'
+version: '2.0.0'
+license: 'MIT'
+short_desc: 'Type stubs for pytest-regressions'
+
+enable_conda: False
+enable_docs: False
+
+
+classifiers:
+ - "Framework :: Pytest"
+ - "Intended Audience :: Developers"
+ - "Topic :: Software Development :: Testing"
+
+python_versions:
+ - 3.6
+ - 3.7
+ - 3.8
+ - 3.9-dev

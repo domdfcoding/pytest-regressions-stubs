@@ -1,19 +1,20 @@
+# 3rd party
 import pytest
 
 
 def pytest_addoption(parser):
-    group = parser.getgroup("regressions")
-    group.addoption(
-        "--force-regen",
-        action="store_true",
-        default=False,
-        help="Re-generate all data_regression fixture data files.",
-    )
+	group = parser.getgroup("regressions")
+	group.addoption(
+			"--force-regen",
+			action="store_true",
+			default=False,
+			help="Re-generate all data_regression fixture data files.",
+			)
 
 
 @pytest.fixture
 def data_regression(datadir, original_datadir, request):
-    """
+	"""
     Fixture used to test arbitrary data against known versions previously
     recorded by this same fixture. Useful to test 3rd party APIs or where testing directly
     generated data from other sources.
@@ -35,14 +36,15 @@ def data_regression(datadir, original_datadir, request):
     :rtype: DataRegressionFixture
     :return: Data regression fixture.
     """
-    from .data_regression import DataRegressionFixture
+	# this package
+	from .data_regression import DataRegressionFixture
 
-    return DataRegressionFixture(datadir, original_datadir, request)
+	return DataRegressionFixture(datadir, original_datadir, request)
 
 
 @pytest.fixture
 def file_regression(datadir, original_datadir, request):
-    """
+	"""
     Very similar to `data_regression`, but instead of saving data to YAML file it saves to an
     arbitrary format.
 
@@ -53,14 +55,15 @@ def file_regression(datadir, original_datadir, request):
     :rtype: FileRegressionFixture
     :return: File regression fixture.
     """
-    from .file_regression import FileRegressionFixture
+	# this package
+	from .file_regression import FileRegressionFixture
 
-    return FileRegressionFixture(datadir, original_datadir, request)
+	return FileRegressionFixture(datadir, original_datadir, request)
 
 
 @pytest.fixture
 def num_regression(datadir, original_datadir, request):
-    """
+	"""
     Example usage:
 
     def testSomeData(num_regression):
@@ -81,14 +84,15 @@ def num_regression(datadir, original_datadir, request):
     :rtype: DataRegressionFixture
     :return: Data regression fixture.
     """
-    from .num_regression import NumericRegressionFixture
+	# this package
+	from .num_regression import NumericRegressionFixture
 
-    return NumericRegressionFixture(datadir, original_datadir, request)
+	return NumericRegressionFixture(datadir, original_datadir, request)
 
 
 @pytest.fixture
 def image_regression(datadir, original_datadir, request):
-    """
+	"""
     Regression checks for images, accounting for small differences between them.
 
     Example:
@@ -96,6 +100,7 @@ def image_regression(datadir, original_datadir, request):
             path = generate_plot(datadir / 'plot.png')
             image_regression.check(path.read_bytes(), diff_threshold=2.5)  # 2.5%
     """
-    from .image_regression import ImageRegressionFixture
+	# this package
+	from .image_regression import ImageRegressionFixture
 
-    return ImageRegressionFixture(datadir, original_datadir, request)
+	return ImageRegressionFixture(datadir, original_datadir, request)

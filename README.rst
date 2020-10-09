@@ -1,89 +1,108 @@
-==================
-pytest-regressions
-==================
+#########################
+pytest-regressions-stubs
+#########################
 
-.. image:: https://img.shields.io/pypi/v/pytest-regressions.svg
-    :target: https://pypi.org/project/pytest-regressions
-    :alt: PyPI version
+.. start short_desc
 
-.. image:: https://img.shields.io/conda/vn/conda-forge/pytest-regressions.svg
-    :target: https://anaconda.org/conda-forge/pytest-regressions
+**Type stubs for pytest-regressions**
 
-.. image:: https://img.shields.io/pypi/pyversions/pytest-regressions.svg
-    :target: https://pypi.org/project/pytest-regressions
-    :alt: Python versions
-
-.. image:: https://travis-ci.com/ESSS/pytest-regressions.svg?branch=master
-    :target: https://travis-ci.com/ESSS/pytest-regressions
-    :alt: See Build Status on Travis CI
-
-.. image:: https://ci.appveyor.com/api/projects/status/oq3udklexcx38sc0/branch/master
-    :target: https://ci.appveyor.com/project/ESSS/pytest-regressions/branch/master
-    :alt: See Build Status on AppVeyor
-
-.. image:: https://img.shields.io/readthedocs/pytest-regressions.svg
-  :target: https://pytest-regressions.readthedocs.io/en/latest
-
-.. image:: https://img.shields.io/badge/code%20style-black-000000.svg
-  :target: https://github.com/ambv/black
-
-Fixtures to write regression tests.
-
-Features
---------
-
-This plugin makes it simple to test general data, images, files, and numeric tables by saving *expected*
-data in a *data directory* (courtesy of `pytest-datadir <https://github.com/gabrielcnr/pytest-datadir>`_) that
-can be used to verify that future runs produce the same data.
-
-See `the docs <https://pytest-regressions.readthedocs.io/en/latest>`_ for examples and API usage.
+.. end short_desc
 
 
-Requirements
-------------
+.. start shields
 
-* ``pytest>=3.5``
-* Python 3.6+.
+.. list-table::
+	:stub-columns: 1
+	:widths: 10 90
 
+	* - Tests
+	  - |travis| |actions_windows| |actions_macos| |coveralls| |codefactor|
+	* - PyPI
+	  - |pypi-version| |supported-versions| |supported-implementations| |wheel|
+	* - Activity
+	  - |commits-latest| |commits-since| |maintained|
+	* - Other
+	  - |license| |language| |requires| |pre_commit|
+
+
+
+.. |travis| image:: https://img.shields.io/travis/com/domdfcoding/pytest-regressions-stubs/master?logo=travis
+	:target: https://travis-ci.com/domdfcoding/pytest-regressions-stubs
+	:alt: Travis Build Status
+
+.. |actions_windows| image:: https://github.com/domdfcoding/pytest-regressions-stubs/workflows/Windows%20Tests/badge.svg
+	:target: https://github.com/domdfcoding/pytest-regressions-stubs/actions?query=workflow%3A%22Windows+Tests%22
+	:alt: Windows Tests Status
+
+.. |actions_macos| image:: https://github.com/domdfcoding/pytest-regressions-stubs/workflows/macOS%20Tests/badge.svg
+	:target: https://github.com/domdfcoding/pytest-regressions-stubs/actions?query=workflow%3A%22macOS+Tests%22
+	:alt: macOS Tests Status
+
+.. |requires| image:: https://requires.io/github/domdfcoding/pytest-regressions-stubs/requirements.svg?branch=master
+	:target: https://requires.io/github/domdfcoding/pytest-regressions-stubs/requirements/?branch=master
+	:alt: Requirements Status
+
+.. |coveralls| image:: https://img.shields.io/coveralls/github/domdfcoding/pytest-regressions-stubs/master?logo=coveralls
+	:target: https://coveralls.io/github/domdfcoding/pytest-regressions-stubs?branch=master
+	:alt: Coverage
+
+.. |codefactor| image:: https://img.shields.io/codefactor/grade/github/domdfcoding/pytest-regressions-stubs?logo=codefactor
+	:target: https://www.codefactor.io/repository/github/domdfcoding/pytest-regressions-stubs
+	:alt: CodeFactor Grade
+
+.. |pypi-version| image:: https://img.shields.io/pypi/v/pytest-regressions-stubs
+	:target: https://pypi.org/project/pytest-regressions-stubs/
+	:alt: PyPI - Package Version
+
+.. |supported-versions| image:: https://img.shields.io/pypi/pyversions/pytest-regressions-stubs?logo=python&logoColor=white
+	:target: https://pypi.org/project/pytest-regressions-stubs/
+	:alt: PyPI - Supported Python Versions
+
+.. |supported-implementations| image:: https://img.shields.io/pypi/implementation/pytest-regressions-stubs
+	:target: https://pypi.org/project/pytest-regressions-stubs/
+	:alt: PyPI - Supported Implementations
+
+.. |wheel| image:: https://img.shields.io/pypi/wheel/pytest-regressions-stubs
+	:target: https://pypi.org/project/pytest-regressions-stubs/
+	:alt: PyPI - Wheel
+
+.. |license| image:: https://img.shields.io/github/license/domdfcoding/pytest-regressions-stubs
+	:target: https://github.com/domdfcoding/pytest-regressions-stubs/blob/master/LICENSE
+	:alt: License
+
+.. |language| image:: https://img.shields.io/github/languages/top/domdfcoding/pytest-regressions-stubs
+	:alt: GitHub top language
+
+.. |commits-since| image:: https://img.shields.io/github/commits-since/domdfcoding/pytest-regressions-stubs/v2.0.0
+	:target: https://github.com/domdfcoding/pytest-regressions-stubs/pulse
+	:alt: GitHub commits since tagged version
+
+.. |commits-latest| image:: https://img.shields.io/github/last-commit/domdfcoding/pytest-regressions-stubs
+	:target: https://github.com/domdfcoding/pytest-regressions-stubs/commit/master
+	:alt: GitHub last commit
+
+.. |maintained| image:: https://img.shields.io/maintenance/yes/2020
+	:alt: Maintenance
+
+.. |pre_commit| image:: https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white
+	:target: https://github.com/pre-commit/pre-commit
+	:alt: pre-commit
+
+.. end shields
+
+|
 
 Installation
-------------
+--------------
 
-You can install "pytest-regressions" via `pip`_ from `PyPI`_::
+.. start installation
 
-    $ pip install pytest-regressions
+``pytest-regressions-stubs`` can be installed from PyPI.
 
+To install with ``pip``:
 
-Contributing
-------------
-Contributions are very welcome. Tests can be run with `tox`_, please ensure
-the coverage at least stays the same before you submit a pull request.
+.. code-block:: bash
 
-License
--------
+	$ python -m pip install pytest-regressions-stubs
 
-Distributed under the terms of the `MIT`_ license, "pytest-regressions" is free and open source software
-
-
-Issues
-------
-
-If you encounter any problems, please `file an issue`_ along with a detailed description.
-
-----
-
-This `pytest`_ plugin was generated with `Cookiecutter`_ along with `@hackebrot`_'s `cookiecutter-pytest-plugin`_ template.
-
-
-.. _`Cookiecutter`: https://github.com/audreyr/cookiecutter
-.. _`@hackebrot`: https://github.com/hackebrot
-.. _`MIT`: http://opensource.org/licenses/MIT
-.. _`BSD-3`: http://opensource.org/licenses/BSD-3-Clause
-.. _`GNU GPL v3.0`: http://www.gnu.org/licenses/gpl-3.0.txt
-.. _`Apache Software License 2.0`: http://www.apache.org/licenses/LICENSE-2.0
-.. _`cookiecutter-pytest-plugin`: https://github.com/pytest-dev/cookiecutter-pytest-plugin
-.. _`file an issue`: https://github.com/nicoddemus/pytest-regressions/issues
-.. _`pytest`: https://github.com/pytest-dev/pytest
-.. _`tox`: https://tox.readthedocs.io/en/latest/
-.. _`pip`: https://pypi.org/project/pip/
-.. _`PyPI`: https://pypi.org/project
+.. end installation

@@ -1,21 +1,61 @@
-exclude: '^($|.*\.bin)'
+# This file is managed by 'repo_helper'. Don't edit it directly.
+---
+
 repos:
--   repo: https://github.com/ambv/black
-    rev: 18.6b4
-    hooks:
-    -   id: black
-        args: [--safe, --quiet]
-        language_version: python3.7
--   repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v1.3.0
-    hooks:
-    -   id: trailing-whitespace
-    -   id: end-of-file-fixer
--   repo: local
-    hooks:
-    -   id: rst
-        name: rst
-        entry: rst-lint --encoding utf-8
-        files: ^(CHANGELOG.rst|HOWTORELEASE.rst|README.rst|changelog/.*)$
-        language: python
-        additional_dependencies: [pygments, restructuredtext_lint]
+ - repo: https://github.com/pre-commit/pre-commit-hooks
+   rev: v2.4.0
+   hooks:
+    - id: check-added-large-files
+    - id: check-ast
+    - id: check-byte-order-marker
+    - id: check-case-conflict
+    - id: check-executables-have-shebangs
+    - id: check-json
+    - id: check-merge-conflict
+    - id: check-symlinks
+    - id: check-toml
+    - id: check-vcs-permalinks
+    - id: check-yaml
+    - id: detect-private-key
+    - id: end-of-file-fixer
+    - id: trailing-whitespace
+    - id: mixed-line-ending
+
+ - repo: https://github.com/domdfcoding/pre-commit-hooks
+   rev: v0.0.4
+   hooks:
+    - id: requirements-txt-sorter
+      args: [--allow-git]
+    - id: check-docstring-first
+      exclude: ^(doc-source/conf|__pkginfo__|make_conda_recipe|setup|tests/.*)\.py$
+    - id: bind-requirements
+
+ - repo: https://github.com/domdfcoding/flake8-dunder-all
+   rev: v0.0.4
+   hooks:
+    - id: ensure-dunder-all
+      files: ^pytest_regressions_stubs/.*\.py$
+
+ - repo: https://github.com/pre-commit/pygrep-hooks
+   rev: v1.5.1
+   hooks:
+    - id: python-no-eval
+
+ - repo: https://github.com/asottile/pyupgrade
+   rev: v1.5.1
+   hooks:
+    - id: pyupgrade
+      args: [--py36-plus]
+
+ - repo: https://github.com/Lucas-C/pre-commit-hooks
+   rev: v1.1.7
+   hooks:
+    - id: forbid-crlf
+    - id: remove-crlf
+
+
+ - repo: https://github.com/domdfcoding/yapf-isort
+   rev: v0.3.0
+   hooks:
+    - id: yapf-isort
+      exclude: ^(doc-source/conf|__pkginfo__|make_conda_recipe|setup)\.py$
