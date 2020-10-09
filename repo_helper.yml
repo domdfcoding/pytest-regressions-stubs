@@ -26,4 +26,4 @@ python_versions:
  - 3.8
 
 exclude_files:
- - pre_commit
+ - pre-commit

@@ -1,5 +1,6 @@
 # This file is managed by 'repo_helper'. Don't edit it directly.
 ---
+exclude: '^($|.*\.bin)'
 
 repos:
  - repo: https://github.com/pre-commit/pre-commit-hooks
