@@ -3,7 +3,7 @@ from __future__ import unicode_literals
 # stdlib
 from textwrap import dedent
 
-# 3rd party
+# this package
 from pytest_regressions.testing import check_regression_fixture_workflow
 
 
@@ -31,7 +31,7 @@ def test_custom_object(data_regression):
 	def dump_scalar(dumper, scalar):
 		return dumper.represent_dict(dict(value=scalar.value, unit=scalar.unit))
 
-	# 3rd party
+	# this package
 	from pytest_regressions import add_custom_yaml_representer
 
 	add_custom_yaml_representer(Scalar, dump_scalar)

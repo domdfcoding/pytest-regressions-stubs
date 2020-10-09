@@ -2,10 +2,12 @@ from __future__ import unicode_literals
 
 # stdlib
 import textwrap
+from pathlib import Path
 
 # 3rd party
 import pytest
-from pathlib import Path
+
+# this package
 from pytest_regressions.testing import check_regression_fixture_workflow
 
 

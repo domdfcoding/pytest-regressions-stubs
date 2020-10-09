@@ -1,9 +1,9 @@
 # stdlib
 import io
 from functools import partial
-
-# 3rd party
 from pathlib import Path
+
+# this package
 from pytest_regressions.testing import check_regression_fixture_workflow
 
 
