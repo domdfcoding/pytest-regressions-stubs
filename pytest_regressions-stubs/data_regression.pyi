@@ -1,13 +1,10 @@
 # stdlib
-from functools import partial
+from typing import Any, Callable, Mapping, Optional, Sequence, Type, Union
+from pathlib import Path
 
 # 3rd party
-from typing import Any, Callable, Mapping, Optional, Type
-
 import yaml
 from _pytest.fixtures import FixtureRequest
-
-from pytest_regressions.common import Path, check_text_files, perform_regression_check
 
 
 class DataRegressionFixture:
@@ -21,7 +18,7 @@ class DataRegressionFixture:
 	force_regen: bool
 
 	def __init__(self, datadir: Path, original_datadir: Path, request: FixtureRequest): ...
-	def check(self, data_dict: Mapping, basename: Optional[str] = None, fullpath: Optional[str] = None) -> None: ...
+	def check(self, data_dict: Union[Sequence, Mapping], basename: Optional[str] = None, fullpath: Optional[str] = None) -> None: ...
 
 	# non-PEP 8 alias used internally at ESSS
 	Check = check
