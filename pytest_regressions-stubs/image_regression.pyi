@@ -1,7 +1,8 @@
-# 3rd party
+# stdlib
 from pathlib import Path
 from typing import Optional
 
+# 3rd party
 import PIL
 from _pytest.fixtures import FixtureRequest
 

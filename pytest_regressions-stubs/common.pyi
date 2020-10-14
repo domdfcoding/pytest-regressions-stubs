@@ -1,9 +1,8 @@
 # stdlib
 from pathlib import Path
-
-# 3rd party
 from typing import Callable, List, Optional
 
+# 3rd party
 from _pytest.fixtures import SubRequest
 
 

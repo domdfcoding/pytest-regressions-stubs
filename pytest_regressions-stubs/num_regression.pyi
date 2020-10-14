@@ -1,9 +1,10 @@
-# 3rd party
+# stdlib
 from pathlib import Path
 from typing import Any, Dict, List, Mapping, Optional
 
+# 3rd party
 import numpy
-import pandas as pandas
+import pandas
 from _pytest.fixtures import FixtureRequest
 
 

@@ -1,10 +1,12 @@
-# 3rd party
+# stdlib
 from pathlib import Path
 
+# 3rd party
 import pytest
 from _pytest.config.argparsing import Parser
 from _pytest.fixtures import FixtureRequest
 
+# this package
 from .data_regression import DataRegressionFixture
 from .file_regression import FileRegressionFixture
 from .num_regression import NumericRegressionFixture
