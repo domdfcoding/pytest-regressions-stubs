@@ -3,7 +3,7 @@ from pathlib import Path
 from typing import Optional
 
 # 3rd party
-import PIL
+import PIL  # type: ignore
 from _pytest.fixtures import FixtureRequest
 
 

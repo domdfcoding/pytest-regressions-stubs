@@ -3,7 +3,7 @@ from pathlib import Path
 from typing import Any, Dict, Mapping, Optional
 
 # 3rd party
-import pandas
+import pandas  # type: ignore
 from _pytest.fixtures import FixtureRequest
 
 

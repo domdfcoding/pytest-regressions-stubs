@@ -2,7 +2,7 @@
 from typing import Any, List, Mapping, Optional
 
 # 3rd party
-import numpy
+import numpy  # type: ignore
 
 # this package
 from pytest_regressions.dataframe_regression import DataFrameRegressionFixture
