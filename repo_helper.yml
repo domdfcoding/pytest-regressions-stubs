@@ -13,6 +13,7 @@ short_desc: 'Type stubs for pytest-regressions'
 enable_conda: False
 enable_docs: False
 stubs_package: True
+on_pypi: False
 
 
 classifiers:
