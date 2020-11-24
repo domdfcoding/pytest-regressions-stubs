@@ -16,7 +16,7 @@ pytest-regressions-stubs
 	:widths: 10 90
 
 	* - Tests
-	  - |travis| |actions_windows| |actions_macos| |coveralls| |codefactor| |pre_commit_ci|
+	  - |travis| |actions_windows| |actions_macos| |codefactor| |pre_commit_ci|
 	* - PyPI
 	  - |pypi-version| |supported-versions| |supported-implementations| |wheel|
 	* - Activity
@@ -41,10 +41,6 @@ pytest-regressions-stubs
 .. |requires| image:: https://requires.io/github/domdfcoding/pytest-regressions-stubs/requirements.svg?branch=master
 	:target: https://requires.io/github/domdfcoding/pytest-regressions-stubs/requirements/?branch=master
 	:alt: Requirements Status
-
-.. |coveralls| image:: https://img.shields.io/coveralls/github/domdfcoding/pytest-regressions-stubs/master?logo=coveralls
-	:target: https://coveralls.io/github/domdfcoding/pytest-regressions-stubs?branch=master
-	:alt: Coverage
 
 .. |codefactor| image:: https://img.shields.io/codefactor/grade/github/domdfcoding/pytest-regressions-stubs?logo=codefactor
 	:target: https://www.codefactor.io/repository/github/domdfcoding/pytest-regressions-stubs
