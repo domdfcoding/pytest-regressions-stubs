@@ -64,12 +64,12 @@ def test_common_cases(num_regression, no_regen):
 	with pytest.raises(AssertionError) as excinfo:
 		num_regression.check({"data1": data1, "data2": data2})
 	obtained_error_msg = str(excinfo.value)
-	expected = "\n".join([
+	expected = '\n'.join([
 			"Values are not sufficiently close.",
 			"To update values, use --force-regen option.",
 			])
 	assert expected in obtained_error_msg
-	expected = "\n".join([
+	expected = '\n'.join([
 			"data1:",
 			"          obtained_data1       expected_data1                 diff",
 			"500  1.20000000000000018  1.10000000000000009  0.10000000000000009",
@@ -77,7 +77,7 @@ def test_common_cases(num_regression, no_regen):
 	# prints used to debug #3
 	print()
 	print(expected)
-	print("-" * 200)
+	print('-' * 200)
 	print(obtained_error_msg)
 	assert expected in obtained_error_msg
 
@@ -90,19 +90,19 @@ def test_common_cases(num_regression, no_regen):
 	with pytest.raises(AssertionError) as excinfo:
 		num_regression.check({"data1": data1, "data2": data2})
 	obtained_error_msg = str(excinfo.value)
-	expected = "\n".join([
+	expected = '\n'.join([
 			"Values are not sufficiently close.",
 			"To update values, use --force-regen option.",
 			])
 	assert expected in obtained_error_msg
-	expected = "\n".join([
+	expected = '\n'.join([
 			"data1:",
 			"          obtained_data1       expected_data1                 diff",
 			"500  1.20000000000000018  1.10000000000000009  0.10000000000000009",
 			"600  1.30000000000000004  1.10000000000000009  0.19999999999999996",
 			])
 	assert expected in obtained_error_msg
-	expected = "\n".join([
+	expected = '\n'.join([
 			"data2:",
 			"     obtained_data2       expected_data2                 diff",
 			"700             2.5  2.20000000000000018  0.29999999999999982",
@@ -125,13 +125,13 @@ def test_common_cases(num_regression, no_regen):
 	obtained_error_msg = str(excinfo.value)
 	assert "  data1:" not in obtained_error_msg
 	assert (
-			"\n".join([
+			'\n'.join([
 					"Values are not sufficiently close.",
 					"To update values, use --force-regen option.",
 					]) in obtained_error_msg
 			)
 	assert (
-			"\n".join([
+			'\n'.join([
 					"data2:",
 					"          obtained_data2       expected_data2                 diff",
 					"500  2.20999999999999996  2.20000000000000018  0.00999999999999979",
@@ -144,7 +144,7 @@ def test_different_data_types(num_regression, no_regen):
 	# Smoke test: Should not raise any exception
 	num_regression.check({"data1": data1})
 
-	data2 = np.array(["a"] * 10)
+	data2 = np.array(['a'] * 10)
 	with pytest.raises(
 			AssertionError,
 			match="Data type for data data1 of obtained and expected are not the same.",
@@ -214,12 +214,12 @@ def test_bool_array(num_regression, no_regen):
 	with pytest.raises(AssertionError) as excinfo:
 		num_regression.check({"data1": data1})
 	obtained_error_msg = str(excinfo.value)
-	expected = "\n".join([
+	expected = '\n'.join([
 			"Values are not sufficiently close.",
 			"To update values, use --force-regen option.",
 			])
 	assert expected in obtained_error_msg
-	expected = "\n".join([
+	expected = '\n'.join([
 			"data1:",
 			"   obtained_data1  expected_data1  diff",
 			"0            True           False  True",

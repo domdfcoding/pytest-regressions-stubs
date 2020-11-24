@@ -1,5 +1,3 @@
-from __future__ import unicode_literals
-
 # stdlib
 from textwrap import dedent
 
@@ -8,19 +6,27 @@ from pytest_regressions.testing import check_regression_fixture_workflow
 
 
 def test_example(data_regression):
-	"""Basic example"""
+	"""
+	Basic example
+	"""
+
 	contents = {"contents": "Foo", "value": 11}
 	data_regression.check(contents)
 
 
 def test_basename(data_regression):
-	"""Basic example using basename parameter"""
+	"""
+	Basic example using basename parameter
+	"""
+
 	contents = {"contents": "Foo", "value": 11}
 	data_regression.check(contents, basename="case.normal")
 
 
 def test_custom_object(data_regression):
-	"""Basic example where we register a custom conversion to dump objects"""
+	"""
+	Basic example where we register a custom conversion to dump objects
+	"""
 
 	class Scalar:
 
@@ -36,7 +42,7 @@ def test_custom_object(data_regression):
 
 	add_custom_yaml_representer(Scalar, dump_scalar)
 
-	contents = {"scalar": Scalar(10, "m")}
+	contents = {"scalar": Scalar(10, 'm')}
 
 	data_regression.check(contents)
 
@@ -177,7 +183,9 @@ def test_data_regression_no_aliases(testdir):
 
 
 def test_not_create_file_on_error(testdir):
-	"""Basic example where we serializing the object should throw an error and should not create the file"""
+	"""
+	Basic example where we serializing the object should throw an error and should not create the file
+	"""
 
 	source = """
         def test(data_regression):
