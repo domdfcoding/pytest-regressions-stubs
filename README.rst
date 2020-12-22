@@ -16,26 +16,33 @@ pytest-regressions-stubs
 	:widths: 10 90
 
 	* - Tests
-	  - |travis| |actions_windows| |actions_macos| |codefactor| |pre_commit_ci|
-
+	  - |actions_linux| |actions_windows| |actions_macos|
 	* - Activity
-	  - |commits-latest| |commits-since| |maintained|
+	  - |commits-latest| |commits-since| |maintained| |pypi-downloads|
+	* - QA
+	  - |codefactor| |actions_flake8| |actions_mypy| |pre_commit_ci|
 	* - Other
-	  - |license| |language| |requires| |pre_commit|
+	  - |license| |language| |requires|
 
-
-
-.. |travis| image:: https://github.com/domdfcoding/pytest-regressions-stubs/workflows/Linux%20Tests/badge.svg
-	:target: https://github.com/domdfcoding/pytest-regressions-stubs/actions?query=workflow%3A%22Linux+Tests%22
+.. |actions_linux| image:: https://github.com/domdfcoding/pytest-regressions-stubs/workflows/Linux/badge.svg
+	:target: https://github.com/domdfcoding/pytest-regressions-stubs/actions?query=workflow%3A%22Linux%22
 	:alt: Linux Test Status
 
-.. |actions_windows| image:: https://github.com/domdfcoding/pytest-regressions-stubs/workflows/Windows%20Tests/badge.svg
-	:target: https://github.com/domdfcoding/pytest-regressions-stubs/actions?query=workflow%3A%22Windows+Tests%22
+.. |actions_windows| image:: https://github.com/domdfcoding/pytest-regressions-stubs/workflows/Windows/badge.svg
+	:target: https://github.com/domdfcoding/pytest-regressions-stubs/actions?query=workflow%3A%22Windows%22
 	:alt: Windows Test Status
 
-.. |actions_macos| image:: https://github.com/domdfcoding/pytest-regressions-stubs/workflows/macOS%20Tests/badge.svg
-	:target: https://github.com/domdfcoding/pytest-regressions-stubs/actions?query=workflow%3A%22macOS+Tests%22
+.. |actions_macos| image:: https://github.com/domdfcoding/pytest-regressions-stubs/workflows/macOS/badge.svg
+	:target: https://github.com/domdfcoding/pytest-regressions-stubs/actions?query=workflow%3A%22macOS%22
 	:alt: macOS Test Status
+
+.. |actions_flake8| image:: https://github.com/domdfcoding/pytest-regressions-stubs/workflows/Flake8/badge.svg
+	:target: https://github.com/domdfcoding/pytest-regressions-stubs/actions?query=workflow%3A%22Flake8%22
+	:alt: Flake8 Status
+
+.. |actions_mypy| image:: https://github.com/domdfcoding/pytest-regressions-stubs/workflows/mypy/badge.svg
+	:target: https://github.com/domdfcoding/pytest-regressions-stubs/actions?query=workflow%3A%22mypy%22
+	:alt: mypy status
 
 .. |requires| image:: https://requires.io/github/domdfcoding/pytest-regressions-stubs/requirements.svg?branch=master
 	:target: https://requires.io/github/domdfcoding/pytest-regressions-stubs/requirements/?branch=master
@@ -44,22 +51,6 @@ pytest-regressions-stubs
 .. |codefactor| image:: https://img.shields.io/codefactor/grade/github/domdfcoding/pytest-regressions-stubs?logo=codefactor
 	:target: https://www.codefactor.io/repository/github/domdfcoding/pytest-regressions-stubs
 	:alt: CodeFactor Grade
-
-.. |pypi-version| image:: https://img.shields.io/pypi/v/pytest-regressions-stubs
-	:target: https://pypi.org/project/pytest-regressions-stubs/
-	:alt: PyPI - Package Version
-
-.. |supported-versions| image:: https://img.shields.io/pypi/pyversions/pytest-regressions-stubs?logo=python&logoColor=white
-	:target: https://pypi.org/project/pytest-regressions-stubs/
-	:alt: PyPI - Supported Python Versions
-
-.. |supported-implementations| image:: https://img.shields.io/pypi/implementation/pytest-regressions-stubs
-	:target: https://pypi.org/project/pytest-regressions-stubs/
-	:alt: PyPI - Supported Implementations
-
-.. |wheel| image:: https://img.shields.io/pypi/wheel/pytest-regressions-stubs
-	:target: https://pypi.org/project/pytest-regressions-stubs/
-	:alt: PyPI - Wheel
 
 .. |license| image:: https://img.shields.io/github/license/domdfcoding/pytest-regressions-stubs
 	:target: https://github.com/domdfcoding/pytest-regressions-stubs/blob/master/LICENSE
@@ -79,9 +70,9 @@ pytest-regressions-stubs
 .. |maintained| image:: https://img.shields.io/maintenance/yes/2020
 	:alt: Maintenance
 
-.. |pre_commit| image:: https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white
-	:target: https://github.com/pre-commit/pre-commit
-	:alt: pre-commit
+.. |pypi-downloads| image:: https://img.shields.io/pypi/dm/pytest-regressions-stubs
+	:target: https://pypi.org/project/pytest-regressions-stubs/
+	:alt: PyPI - Downloads
 
 .. |pre_commit_ci| image:: https://results.pre-commit.ci/badge/github/domdfcoding/pytest-regressions-stubs/master.svg
 	:target: https://results.pre-commit.ci/latest/github/domdfcoding/pytest-regressions-stubs/master
@@ -95,4 +86,13 @@ pytest-regressions-stubs
 .. --------------
 
 .. start installation
+
+``pytest-regressions-stubs`` can be installed from GitHub.
+
+To install with ``pip``:
+
+.. code-block:: bash
+
+	$ python -m pip install git+https://github.com/domdfcoding/pytest-regressions-stubs
+
 .. end installation
