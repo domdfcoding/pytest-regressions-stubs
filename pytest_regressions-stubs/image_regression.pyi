@@ -33,7 +33,7 @@ class ImageRegressionFixture:
 	def check(
 			self,
 			image_data: bytes,
-			diff_threshold: float = 0.1,
-			expect_equal: bool = True,
-			basename: Optional[str] = None,
+			diff_threshold: float = ...,
+			expect_equal: bool = ...,
+			basename: Optional[str] = ...,
 			) -> None: ...

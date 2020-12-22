@@ -11,5 +11,5 @@ def check_regression_fixture_workflow(
 		data_modifier: Callable[[], None],
 		expected_data_1: Any,
 		expected_data_2: Any,
-		compare_fn: Optional[Callable[[Any, Any], bool]] = None,
+		compare_fn: Optional[Callable[[Any, Any], bool]] = ...,
 		) -> None: ...

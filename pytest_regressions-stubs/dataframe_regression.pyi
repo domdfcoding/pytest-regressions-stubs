@@ -12,9 +12,9 @@ class DataFrameRegressionFixture:
     Pandas DataFrame Regression fixture implementation used on dataframe_regression fixture.
     """
 
-	DISPLAY_PRECISION: int = 17  # Decimal places
-	DISPLAY_WIDTH: int = 1000  # Max. Chars on outputs
-	DISPLAY_MAX_COLUMNS: int = 1000  # Max. Number of columns (see #3)
+	DISPLAY_PRECISION: int = ...  # Decimal places
+	DISPLAY_WIDTH: int = ...  # Max. Chars on outputs
+	DISPLAY_MAX_COLUMNS: int = ...  # Max. Number of columns (see #3)
 
 	request: FixtureRequest
 	datadir: Path
@@ -33,8 +33,8 @@ class DataFrameRegressionFixture:
 	def check(
 			self,
 			data_frame: pandas.DataFrame,
-			basename: Optional[str] = None,
-			fullpath: Optional[str] = None,
-			tolerances: Optional[Mapping[str, Any]] = None,
-			default_tolerance: Optional[Mapping[str, float]] = None,
+			basename: Optional[str] = ...,
+			fullpath: Optional[str] = ...,
+			tolerances: Optional[Mapping[str, Any]] = ...,
+			default_tolerance: Optional[Mapping[str, float]] = ...,
 			) -> None: ...

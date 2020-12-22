@@ -7,7 +7,7 @@ import pytest
 from pytest_regressions.testing import check_regression_fixture_workflow
 
 
-@pytest.fixture
+@pytest.fixture()
 def no_regen(num_regression, request):
 	if num_regression._force_regen or request.config.getoption("force_regen"):
 		pytest.fail("--force-regen should not be used on this test.")

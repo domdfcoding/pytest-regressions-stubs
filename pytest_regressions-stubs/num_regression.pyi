@@ -16,10 +16,10 @@ class NumericRegressionFixture(DataFrameRegressionFixture):
 	def check(
 			self,
 			data_dict: Mapping[str, numpy.ndarray],
-			basename: Optional[str] = None,
-			fullpath: Optional[str] = None,
-			tolerances: Optional[Mapping[str, Any]] = None,
-			default_tolerance: Optional[Mapping[str, float]] = None,
-			data_index: List[int] = None,
-			fill_different_shape_with_nan: bool = True,
+			basename: Optional[str] = ...,
+			fullpath: Optional[str] = ...,
+			tolerances: Optional[Mapping[str, Any]] = ...,
+			default_tolerance: Optional[Mapping[str, float]] = ...,
+			data_index: Optional[List[int]] = ...,
+			fill_different_shape_with_nan: bool = ...,
 			) -> None: ...
