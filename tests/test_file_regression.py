@@ -1,5 +1,3 @@
-from __future__ import unicode_literals
-
 # stdlib
 import textwrap
 from pathlib import Path
@@ -26,7 +24,7 @@ def test_simple_bin_file(file_regression, datadir):
 
 def test_binary_and_text_error(file_regression):
 	with pytest.raises(ValueError):
-		file_regression.check("", encoding="UTF-8", binary=True)
+		file_regression.check('', encoding="UTF-8", binary=True)
 
 
 def test_file_regression_workflow(testdir, monkeypatch):
