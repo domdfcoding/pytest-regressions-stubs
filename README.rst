@@ -17,8 +17,6 @@ pytest-regressions-stubs
 
 	* - Tests
 	  - |actions_linux| |actions_windows| |actions_macos|
-	* - PyPI
-	  - |pypi-version| |supported-versions| |supported-implementations| |wheel|
 	* - Activity
 	  - |commits-latest| |commits-since| |maintained| |pypi-downloads|
 	* - QA
@@ -53,22 +51,6 @@ pytest-regressions-stubs
 .. |codefactor| image:: https://img.shields.io/codefactor/grade/github/domdfcoding/pytest-regressions-stubs?logo=codefactor
 	:target: https://www.codefactor.io/repository/github/domdfcoding/pytest-regressions-stubs
 	:alt: CodeFactor Grade
-
-.. |pypi-version| image:: https://img.shields.io/pypi/v/pytest-regressions-stubs
-	:target: https://pypi.org/project/pytest-regressions-stubs/
-	:alt: PyPI - Package Version
-
-.. |supported-versions| image:: https://img.shields.io/pypi/pyversions/pytest-regressions-stubs?logo=python&logoColor=white
-	:target: https://pypi.org/project/pytest-regressions-stubs/
-	:alt: PyPI - Supported Python Versions
-
-.. |supported-implementations| image:: https://img.shields.io/pypi/implementation/pytest-regressions-stubs
-	:target: https://pypi.org/project/pytest-regressions-stubs/
-	:alt: PyPI - Supported Implementations
-
-.. |wheel| image:: https://img.shields.io/pypi/wheel/pytest-regressions-stubs
-	:target: https://pypi.org/project/pytest-regressions-stubs/
-	:alt: PyPI - Wheel
 
 .. |license| image:: https://img.shields.io/github/license/domdfcoding/pytest-regressions-stubs
 	:target: https://github.com/domdfcoding/pytest-regressions-stubs/blob/master/LICENSE
@@ -105,12 +87,12 @@ Installation
 
 .. start installation
 
-``pytest-regressions-stubs`` can be installed from PyPI.
+``pytest-regressions-stubs`` can be installed from GitHub.
 
 To install with ``pip``:
 
 .. code-block:: bash
 
-	$ python -m pip install pytest-regressions-stubs
+	$ python -m pip install git+https://github.com/domdfcoding/pytest-regressions-stubs
 
 .. end installation
