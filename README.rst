@@ -82,8 +82,8 @@ pytest-regressions-stubs
 
 |
 
-.. Installation
-.. --------------
+Installation
+--------------
 
 .. start installation
 

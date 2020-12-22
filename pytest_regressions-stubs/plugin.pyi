@@ -8,6 +8,7 @@ from _pytest.fixtures import FixtureRequest
 
 # this package
 from .data_regression import DataRegressionFixture
+from .dataframe_regression import DataFrameRegressionFixture
 from .file_regression import FileRegressionFixture
 from .num_regression import NumericRegressionFixture
 from .image_regression import ImageRegressionFixture
@@ -25,3 +26,6 @@ def num_regression(datadir: Path, original_datadir: Path, request: FixtureReques
 
 @pytest.fixture
 def image_regression(datadir: Path, original_datadir: Path, request: FixtureRequest) -> ImageRegressionFixture: ...
+
+@pytest.fixture
+def dataframe_regression(datadir: Path, original_datadir: Path, request: FixtureRequest) -> DataFrameRegressionFixture: ...
