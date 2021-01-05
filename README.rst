@@ -18,7 +18,7 @@ pytest-regressions-stubs
 	* - Tests
 	  - |actions_linux| |actions_windows| |actions_macos|
 	* - Activity
-	  - |commits-latest| |commits-since| |maintained| |pypi-downloads|
+	  - |commits-latest| |commits-since| |maintained|
 	* - QA
 	  - |codefactor| |actions_flake8| |actions_mypy| |pre_commit_ci|
 	* - Other
@@ -67,12 +67,8 @@ pytest-regressions-stubs
 	:target: https://github.com/domdfcoding/pytest-regressions-stubs/commit/master
 	:alt: GitHub last commit
 
-.. |maintained| image:: https://img.shields.io/maintenance/yes/2020
+.. |maintained| image:: https://img.shields.io/maintenance/yes/2021
 	:alt: Maintenance
-
-.. |pypi-downloads| image:: https://img.shields.io/pypi/dm/pytest-regressions-stubs
-	:target: https://pypi.org/project/pytest-regressions-stubs/
-	:alt: PyPI - Downloads
 
 .. |pre_commit_ci| image:: https://results.pre-commit.ci/badge/github/domdfcoding/pytest-regressions-stubs/master.svg
 	:target: https://results.pre-commit.ci/latest/github/domdfcoding/pytest-regressions-stubs/master
