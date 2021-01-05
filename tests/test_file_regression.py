@@ -23,7 +23,7 @@ def test_simple_bin_file(file_regression, datadir):
 
 
 def test_binary_and_text_error(file_regression):
-	with pytest.raises(ValueError):
+	with pytest.raises(ValueError):  # noqa: PT011
 		file_regression.check('', encoding="UTF-8", binary=True)
 
 

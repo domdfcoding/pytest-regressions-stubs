@@ -1,28 +1,25 @@
 def summary_grids():
+	main_grid_properties = [
+			{"name": "Temperature", "min": 75, "max": 85},
+			{"name": "Porosity", "min": 0.3, "max": 0.4},
+			]
+	refin1_properties = [
+			{"name": "Temperature", "min": 78, "max": 81},
+			{"name": "Porosity", "min": 0.36, "max": 0.39},
+			]
+
 	return {
 			"Main Grid": {
-					"id":
-							0,
-					"cell_count":
-							1000,
-					"active_cells":
-							300,
-					"properties": [
-							{"name": "Temperature", "min": 75, "max": 85},
-							{"name": "Porosity", "min": 0.3, "max": 0.4},
-							],
+					"id": 0,
+					"cell_count": 1000,
+					"active_cells": 300,
+					"properties": main_grid_properties,
 					},
 			"Refin1": {
-					"id":
-							1,
-					"cell_count":
-							48,
-					"active_cells":
-							44,
-					"properties": [
-							{"name": "Temperature", "min": 78, "max": 81},
-							{"name": "Porosity", "min": 0.36, "max": 0.39},
-							],
+					"id": 1,
+					"cell_count": 48,
+					"active_cells": 44,
+					"properties": refin1_properties,
 					},
 			}
 
