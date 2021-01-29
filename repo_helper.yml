@@ -15,7 +15,6 @@ enable_docs: False
 stubs_package: True
 on_pypi: False
 
-
 classifiers:
  - "Framework :: Pytest"
  - "Intended Audience :: Developers"
@@ -26,5 +25,4 @@ python_versions:
  - 3.7
  - 3.8
 
-exclude_files:
- - pre-commit
+pre_commit_exclude: '^($|.*\.bin)'

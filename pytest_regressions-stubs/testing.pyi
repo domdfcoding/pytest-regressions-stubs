@@ -1,8 +1,8 @@
 # stdlib
 from typing import Any, Callable, Optional
 
+# 3rd party
 from _pytest.pytester import Testdir
-
 
 def check_regression_fixture_workflow(
 		testdir: Testdir,

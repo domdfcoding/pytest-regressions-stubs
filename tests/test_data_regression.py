@@ -3,6 +3,7 @@ from textwrap import dedent
 
 # this package
 from pytest_regressions.testing import check_regression_fixture_workflow
+from pytest_regressions import add_custom_yaml_representer
 
 
 def test_example(data_regression):
@@ -36,9 +37,6 @@ def test_custom_object(data_regression):
 
 	def dump_scalar(dumper, scalar):
 		return dumper.represent_dict(dict(value=scalar.value, unit=scalar.unit))
-
-	# this package
-	from pytest_regressions import add_custom_yaml_representer
 
 	add_custom_yaml_representer(Scalar, dump_scalar)
 

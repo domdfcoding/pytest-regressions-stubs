@@ -10,12 +10,10 @@ from _pytest.fixtures import FixtureRequest
 from .data_regression import DataRegressionFixture
 from .dataframe_regression import DataFrameRegressionFixture
 from .file_regression import FileRegressionFixture
-from .num_regression import NumericRegressionFixture
 from .image_regression import ImageRegressionFixture
-
+from .num_regression import NumericRegressionFixture
 
 def pytest_addoption(parser: Parser) -> None: ...
-
 
 @pytest.fixture()
 def data_regression(
@@ -24,14 +22,12 @@ def data_regression(
 		request: FixtureRequest,
 		) -> DataRegressionFixture: ...
 
-
 @pytest.fixture()
 def file_regression(
 		datadir: Path,
 		original_datadir: Path,
 		request: FixtureRequest,
 		) -> FileRegressionFixture: ...
-
 
 @pytest.fixture()
 def num_regression(
@@ -40,14 +36,12 @@ def num_regression(
 		request: FixtureRequest,
 		) -> NumericRegressionFixture: ...
 
-
 @pytest.fixture()
 def image_regression(
 		datadir: Path,
 		original_datadir: Path,
 		request: FixtureRequest,
 		) -> ImageRegressionFixture: ...
-
 
 @pytest.fixture()
 def dataframe_regression(

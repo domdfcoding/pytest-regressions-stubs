@@ -6,19 +6,16 @@ from typing import Optional
 import PIL  # type: ignore
 from _pytest.fixtures import FixtureRequest
 
-
 class ImageRegressionFixture:
 	"""
 	Regression test for image objects, accounting for small differences.
 	"""
-
 	request: FixtureRequest
 	datadir: Path
 	original_datadir: Path
 	force_regen: bool
 
 	def __init__(self, datadir: Path, original_datadir: Path, request: FixtureRequest): ...
-
 	def _load_image(self, filename: Path) -> PIL.Image.Image: ...
 	def _compute_manhattan_distance(self, diff_image: PIL.Image.Image) -> float: ...
 

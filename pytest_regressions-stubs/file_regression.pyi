@@ -5,12 +5,10 @@ from typing import Any, AnyStr, Callable, Optional
 # 3rd party
 from _pytest.fixtures import FixtureRequest
 
-
 class FileRegressionFixture:
 	"""
 	Implementation of `file_regression` fixture.
 	"""
-
 	request: FixtureRequest
 	datadir: Path
 	original_datadir: Path

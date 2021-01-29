@@ -6,16 +6,13 @@ from typing import Any, Dict, Mapping, Optional
 import pandas  # type: ignore
 from _pytest.fixtures import FixtureRequest
 
-
 class DataFrameRegressionFixture:
 	"""
     Pandas DataFrame Regression fixture implementation used on dataframe_regression fixture.
     """
-
 	DISPLAY_PRECISION: int = ...  # Decimal places
 	DISPLAY_WIDTH: int = ...  # Max. Chars on outputs
 	DISPLAY_MAX_COLUMNS: int = ...  # Max. Number of columns (see #3)
-
 	request: FixtureRequest
 	datadir: Path
 	original_datadir: Path

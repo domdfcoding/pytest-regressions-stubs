@@ -7,7 +7,6 @@ import numpy  # type: ignore
 # this package
 from pytest_regressions.dataframe_regression import DataFrameRegressionFixture
 
-
 class NumericRegressionFixture(DataFrameRegressionFixture):
 	"""
 	Numeric Data Regression fixture implementation used on num_regression fixture.

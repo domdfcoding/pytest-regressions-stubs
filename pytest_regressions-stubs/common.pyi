@@ -5,9 +5,7 @@ from typing import Callable, List, Optional
 # 3rd party
 from _pytest.fixtures import SubRequest
 
-
 def import_error_message(libname: str) -> str: ...
-
 
 def check_text_files(
 		obtained_fn: Path,
@@ -15,7 +13,6 @@ def check_text_files(
 		fix_callback: Callable[[List[str]], List[str]] = ...,
 		encoding: Optional[str] = ...,
 		) -> None: ...
-
 
 def perform_regression_check(
 		datadir: Path,
