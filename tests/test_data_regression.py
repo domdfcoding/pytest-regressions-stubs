@@ -2,8 +2,8 @@
 from textwrap import dedent
 
 # this package
-from pytest_regressions.testing import check_regression_fixture_workflow
 from pytest_regressions import add_custom_yaml_representer
+from pytest_regressions.testing import check_regression_fixture_workflow
 
 
 def test_example(data_regression):
