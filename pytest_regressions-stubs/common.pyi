@@ -3,7 +3,7 @@ from pathlib import Path
 from typing import Callable, List, Optional
 
 # 3rd party
-from _pytest.fixtures import SubRequest
+from _pytest.fixtures import FixtureRequest
 
 def import_error_message(libname: str) -> str: ...
 
@@ -17,7 +17,7 @@ def check_text_files(
 def perform_regression_check(
 		datadir: Path,
 		original_datadir: Path,
-		request: SubRequest,
+		request: FixtureRequest,
 		check_fn: Callable[[Path, Path], None],
 		dump_fn: Callable[[Path], None],
 		extension: str,
