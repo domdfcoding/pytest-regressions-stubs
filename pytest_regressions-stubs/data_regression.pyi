@@ -29,7 +29,6 @@ class DataRegressionFixture:
 	Check = check
 
 class RegressionYamlDumper(yaml.SafeDumper):
-
 	def ignore_aliases(self, data) -> Literal[True]: ...
 
 	@classmethod
