@@ -10,14 +10,15 @@ version: '2.0.0'
 license: 'MIT'
 short_desc: 'Type stubs for pytest-regressions'
 
-enable_conda: False
-enable_docs: False
-stubs_package: True
+enable_conda: false
+enable_docs: false
+stubs_package: true
 use_whey: true
-on_pypi: False
+on_pypi: false
 pre_commit_exclude: '^($|.*\.bin)'
 
 classifiers:
+ - 'Development Status :: 4 - Beta'
  - "Framework :: Pytest"
  - "Intended Audience :: Developers"
  - "Topic :: Software Development :: Testing"

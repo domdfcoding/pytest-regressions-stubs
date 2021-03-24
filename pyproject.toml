@@ -23,6 +23,7 @@ Homepage = "https://github.com/domdfcoding/pytest-regressions-stubs"
 
 [tool.whey]
 base-classifiers = [
+    "Development Status :: 4 - Beta",
     "Framework :: Pytest",
     "Intended Audience :: Developers",
     "Topic :: Software Development :: Testing",
