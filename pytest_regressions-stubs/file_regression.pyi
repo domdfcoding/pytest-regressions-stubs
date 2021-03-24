@@ -7,7 +7,7 @@ from _pytest.fixtures import FixtureRequest
 
 class FileRegressionFixture:
 	"""
-	Implementation of `file_regression` fixture.
+	Implementation of ``file_regression`` fixture.
 	"""
 	request: FixtureRequest
 	datadir: Path

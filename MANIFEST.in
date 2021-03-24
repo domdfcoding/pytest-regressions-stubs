@@ -1,6 +1,0 @@
-include __pkginfo__.py
-include LICENSE
-include requirements.txt
-prune **/__pycache__
-recursive-include pytest_regressions-stubs *.pyi
-include pytest_regressions-stubs/py.typed

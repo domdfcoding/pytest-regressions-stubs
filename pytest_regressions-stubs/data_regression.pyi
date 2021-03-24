@@ -9,7 +9,7 @@ from typing_extensions import Literal
 
 class DataRegressionFixture:
 	"""
-	Implementation of `data_regression` fixture.
+	Implementation of ``data_regression`` fixture.
 	"""
 	request: FixtureRequest
 	datadir: Path

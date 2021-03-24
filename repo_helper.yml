@@ -13,7 +13,9 @@ short_desc: 'Type stubs for pytest-regressions'
 enable_conda: False
 enable_docs: False
 stubs_package: True
+use_whey: true
 on_pypi: False
+pre_commit_exclude: '^($|.*\.bin)'
 
 classifiers:
  - "Framework :: Pytest"
@@ -24,5 +26,3 @@ python_versions:
  - 3.6
  - 3.7
  - 3.8
-
-pre_commit_exclude: '^($|.*\.bin)'
