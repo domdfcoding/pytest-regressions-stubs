@@ -38,6 +38,7 @@ known_third_party = [
     "data_science_types",
     "domdf_python_tools",
     "github",
+    "importlib_metadata",
     "matplotlib",
     "numpy",
     "pandas",
