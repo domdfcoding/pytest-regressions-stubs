@@ -38,6 +38,7 @@ known_third_party = [
     "data_science_types",
     "domdf_python_tools",
     "github",
+    "importlib_metadata",
     "matplotlib",
     "numpy",
     "pandas",
@@ -49,4 +50,4 @@ known_third_party = [
     "pytest_timeout",
     "requests",
 ]
-known_first_party = "pytest_regressions"
+known_first_party = [ "pytest_regressions",]
