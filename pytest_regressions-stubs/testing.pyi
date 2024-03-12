@@ -2,10 +2,10 @@
 from typing import Any, Callable, Optional
 
 # 3rd party
-from _pytest.pytester import Testdir
+import pytest
 
 def check_regression_fixture_workflow(
-		testdir: Testdir,
+		pytester: pytest.Pytester,
 		source: str,
 		data_getter: Callable[[], Any],
 		data_modifier: Callable[[], None],
