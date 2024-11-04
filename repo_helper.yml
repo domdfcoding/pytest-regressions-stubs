@@ -16,6 +16,7 @@ stubs_package: true
 use_whey: true
 on_pypi: false
 pre_commit_exclude: '^($|.*\.bin)'
+min_coverage: 60
 
 classifiers:
  - 'Development Status :: 4 - Beta'
