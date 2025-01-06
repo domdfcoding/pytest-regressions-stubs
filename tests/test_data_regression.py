@@ -79,8 +79,7 @@ def test_usage_workflow(testdir, monkeypatch):
 					sys,
 					"testing_get_data",
 					lambda: {"contents": "Bar", "value": 20},
-					raising=False,
-					),
+					raising=False, ),
 			expected_data_1={"contents": "Foo", "value": 10},
 			expected_data_2={"contents": "Bar", "value": 20},
 			)
