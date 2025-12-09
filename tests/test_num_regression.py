@@ -1,6 +1,6 @@
 # 3rd party
 import numpy as np
-import pandas as pd  # type: ignore[import]
+import pandas as pd
 import pytest
 
 # this package

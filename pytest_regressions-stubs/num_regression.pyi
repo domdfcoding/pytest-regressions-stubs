@@ -12,7 +12,7 @@ class NumericRegressionFixture(DataFrameRegressionFixture):
 	Numeric Data Regression fixture implementation used on num_regression fixture.
 	"""
 
-	def check(
+	def check(  # type: ignore[override]
 			self,
 			data_dict: Mapping[str, numpy.ndarray],
 			basename: Optional[str] = ...,

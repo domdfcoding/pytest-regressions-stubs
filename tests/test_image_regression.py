@@ -8,13 +8,13 @@ from pytest_regressions.testing import check_regression_fixture_workflow
 
 def test_image_regression(image_regression, datadir):
 	# 3rd party
-	import matplotlib  # type: ignore[import]
+	import matplotlib
 
 	# this ensures matplot lib does not use a GUI backend (such as Tk)
 	matplotlib.use("Agg")
 
 	# 3rd party
-	import matplotlib.pyplot as plt  # type: ignore[import]
+	import matplotlib.pyplot as plt
 	import numpy as np
 
 	t = np.arange(0.0, 2.0, 0.01)
@@ -41,7 +41,7 @@ def test_image_regression_workflow(pytester, monkeypatch, datadir):
 	import sys
 
 	# 3rd party
-	from PIL import Image  # type: ignore[import]
+	from PIL import Image
 
 	def get_image(color):
 		f = io.BytesIO()

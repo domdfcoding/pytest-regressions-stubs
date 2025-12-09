@@ -3,7 +3,7 @@ from pathlib import Path
 from typing import Optional
 
 # 3rd party
-import PIL  # type: ignore
+from PIL import Image
 from _pytest.fixtures import FixtureRequest
 
 class ImageRegressionFixture:
@@ -16,8 +16,8 @@ class ImageRegressionFixture:
 	force_regen: bool
 
 	def __init__(self, datadir: Path, original_datadir: Path, request: FixtureRequest): ...
-	def _load_image(self, filename: Path) -> PIL.Image.Image: ...
-	def _compute_manhattan_distance(self, diff_image: PIL.Image.Image) -> float: ...
+	def _load_image(self, filename: Path) -> Image.Image: ...
+	def _compute_manhattan_distance(self, diff_image: Image.Image) -> float: ...
 
 	def _check_images_manhattan_distance(
 			self,
