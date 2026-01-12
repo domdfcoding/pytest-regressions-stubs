@@ -174,7 +174,7 @@ def test_data_regression_no_aliases(testdir):
         - 0
         - 0
         - 255
-        """
+        """,
 			)
 	result = testdir.inline_run()
 	result.assertoutcome(passed=1)

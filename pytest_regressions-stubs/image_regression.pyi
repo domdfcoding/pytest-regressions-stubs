@@ -3,8 +3,8 @@ from pathlib import Path
 from typing import Optional
 
 # 3rd party
-from PIL import Image
 from _pytest.fixtures import FixtureRequest
+from PIL import Image
 
 class ImageRegressionFixture:
 	"""

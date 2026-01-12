@@ -13,12 +13,13 @@ class NumericRegressionFixture(DataFrameRegressionFixture):
 	"""
 
 	def check(  # type: ignore[override]
-			self,
-			data_dict: Mapping[str, numpy.ndarray],
-			basename: Optional[str] = ...,
-			fullpath: Optional[str] = ...,
-			tolerances: Optional[Mapping[str, Any]] = ...,
-			default_tolerance: Optional[Mapping[str, float]] = ...,
-			data_index: Optional[List[int]] = ...,
-			fill_different_shape_with_nan: bool = ...,
-			) -> None: ...
+		self,
+		data_dict: Mapping[str, numpy.ndarray],
+		basename: Optional[str] = ...,
+		fullpath: Optional[str] = ...,
+		tolerances: Optional[Mapping[str, Any]] = ...,
+		default_tolerance: Optional[Mapping[str, float]] = ...,
+		data_index: Optional[List[int]] = ...,
+		fill_different_shape_with_nan: bool = ...,
+
+	) -> None: ...
